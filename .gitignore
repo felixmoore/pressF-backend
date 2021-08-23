@@ -140,3 +140,5 @@ fabric.properties
 # Sharing run configurations
 /.idea/*
 !/.idea/runConfigurations
+
+target/
