@@ -10,7 +10,9 @@ public interface JobRoleMapper {
     @Select("SELECT ID, TestMessage FROM Test_Table")
     List<Test> getTest();
 
-    @Select("SELECT * FROM JobRoles")
+    @Select("SELECT * FROM Test_Table")
     List<JobRole> getJobRoles();
+
+    List<JobRole> getAllJobRoles();
 
 }
