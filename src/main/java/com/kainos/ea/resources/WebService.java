@@ -68,7 +68,6 @@ public class WebService {
         try (Reader settings = Resources.getResourceAsReader("mybatis-config.xml")) {
 
             SqlSessionFactoryBuilder mybatis = new SqlSessionFactoryBuilder();
-            System.out.println("MADE IT HERE");
             SqlSessionFactory mappedDb = mybatis.build(settings);
             SqlSession session = mappedDb.openSession();
 
