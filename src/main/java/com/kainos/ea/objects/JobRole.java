@@ -8,10 +8,11 @@ public class JobRole {
     private String jobBand;
     private String jobCapability;
     private String jobCompetencies;
+    private String jobDiscipline;
 
     public JobRole() { }
 
-    public JobRole(int jobRoleID, String jobTitle, String jobSpec, String jobBand, String jobCapability, String jobCompetencies) {
+    public JobRole(int jobRoleID, String jobTitle, String jobSpec, String jobBand, String jobCapability, String jobCompetencies, String jobDiscipline) {
         super();
         this.jobRoleID = jobRoleID;
         this.jobTitle = jobTitle;
@@ -19,6 +20,7 @@ public class JobRole {
         this.jobBand = jobBand;
         this.jobCapability = jobCapability;
         this.jobCompetencies = jobCompetencies;
+        this.jobDiscipline = jobDiscipline;
     }
 
     public int getJobRoleID() {
@@ -68,4 +70,8 @@ public class JobRole {
     public void setJobCompetencies(String jobCompetencies) {
         this.jobCompetencies = jobCompetencies;
     }
+
+    public void setJobDiscipline(String jobDiscipline) { this.jobDiscipline = jobDiscipline; }
+
+    public String getJobDiscipline() { return jobDiscipline; }
 }
