@@ -4,6 +4,7 @@ import com.kainos.ea.db.JobRoleMapper;
 import com.kainos.ea.objects.JobRole;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionException;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
@@ -14,12 +15,13 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 import java.io.Reader;
+import java.sql.SQLException;
 import java.util.Collections;
 import java.util.List;
 
 @Path("/api")
 public class WebService {
-    private SqlSession sqlSession;
+    private SqlSessionFactory sqlSessionFactory;
     @GET
     @Path("/ping")
     public String ping() {
@@ -38,24 +40,29 @@ public class WebService {
     @Path("/testMybatis")
     @Produces(MediaType.APPLICATION_JSON)
     public List<?> testMybatis(){
-            if (sqlSession == null) {
-                initDBConnection();
-            }
-            JobRoleMapper jobRoles = sqlSession.getMapper(JobRoleMapper.class);
-            List<DBTest> test = jobRoles.getTest();
-            if (test.size() > 0){
-                return test;
+        if (sqlSessionFactory == null) {
+            initDBConnection();
+        }
+
+        try (SqlSession session = sqlSessionFactory.openSession()) {
+            JobRoleMapper dbTest = session.getMapper(JobRoleMapper.class);
+            List<DBTest> dbTestList = dbTest.getTest();
+            if (dbTestList.size() > 0){
+                return dbTestList;
             } else {
                 return Collections.singletonList("No entries found.");
             }
-
+        } catch (SqlSessionException sqle){
+            sqle.printStackTrace();
+            return Collections.singletonList("An error occurred during database connection.");
+        }
     }
 
     public void initDBConnection(){
         try (Reader settings = Resources.getResourceAsReader("mybatis-config.xml")) {
             SqlSessionFactoryBuilder mybatis = new SqlSessionFactoryBuilder();
-            SqlSessionFactory mappedDb = mybatis.build(settings);
-            sqlSession = mappedDb.openSession();
+            sqlSessionFactory = mybatis.build(settings);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -64,22 +71,25 @@ public class WebService {
     @GET
     @Path("/getjobroles")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<? extends Object> getJobRoles(){
-        try (Reader settings = Resources.getResourceAsReader("mybatis-config.xml")) {
-
-            SqlSessionFactoryBuilder mybatis = new SqlSessionFactoryBuilder();
-            SqlSessionFactory mappedDb = mybatis.build(settings);
-            SqlSession session = mappedDb.openSession();
-
-            JobRoleMapper jobRoles = session.getMapper(JobRoleMapper.class);
-
-            List<JobRole> jobRoleList = jobRoles.getJobRoles();
-            session.close();
-            return(jobRoleList);
-
-        } catch (IOException e) {
-            e.printStackTrace();
+    public List<?> getJobRoles(){
+        if (sqlSessionFactory == null) {
+            initDBConnection();
         }
-        return Collections.singletonList("Database connection failed.");
+
+        try (SqlSession session = sqlSessionFactory.openSession()) {
+            JobRoleMapper jobRoles = session.getMapper(JobRoleMapper.class);
+            List<JobRole> jobRolesList = jobRoles.getJobRoles();
+            if (jobRolesList.size() > 0){
+                return jobRolesList;
+            } else {
+                return Collections.singletonList("No entries found.");
+            }
+        } catch (SqlSessionException sqle){
+            sqle.printStackTrace();
+            return Collections.singletonList("An error occurred during database connection.");
+        }
+
+
     }
+
 }
