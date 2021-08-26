@@ -5,13 +5,13 @@ public class JobRole {
     private int jobRoleID;
     private String jobTitle;
     private String jobSpec;
-    private JobBand jobBand;
-    private JobCapability jobCapability;
+    private String jobBand;
+    private String jobCapability;
     private String jobCompetencies;
 
     public JobRole() { }
 
-    public JobRole(int jobRoleID, String jobTitle, String jobSpec, JobBand jobBand, JobCapability jobCapability, String jobCompetencies) {
+    public JobRole(int jobRoleID, String jobTitle, String jobSpec, String jobBand, String jobCapability, String jobCompetencies) {
         super();
         this.jobRoleID = jobRoleID;
         this.jobTitle = jobTitle;
@@ -45,19 +45,19 @@ public class JobRole {
         this.jobSpec = jobSpec;
     }
 
-    public JobBand getJobBand() {
+    public String getJobBand() {
         return jobBand;
     }
 
-    public void setJobBand(JobBand jobBand) {
+    public void setJobBand(String jobBand) {
         this.jobBand = jobBand;
     }
 
-    public JobCapability getJobCapability() {
+    public String getJobCapability() {
         return jobCapability;
     }
 
-    public void setJobCapability(JobCapability jobCapability) {
+    public void setJobCapability(String jobCapability) {
         this.jobCapability = jobCapability;
     }
 

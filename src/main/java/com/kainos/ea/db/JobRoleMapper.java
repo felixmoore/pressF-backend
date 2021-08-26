@@ -10,9 +10,8 @@ public interface JobRoleMapper {
     @Select("SELECT ID, TestMessage FROM Test_Table")
     List<Test> getTest();
 
-    @Select("SELECT * FROM Test_Table")
+    @Select("SELECT JobRoleID, JobTitle, jc.JobCapability, jb.JobBand, JobCompetencies, RecordCreated FROM JobRoles JOIN JobBand jb ON JobRoles.JobBand = jb.JobBandID JOIN JobCapability jc ON JobRoles.JobCapability = jc.JobCapabilityID")
     List<JobRole> getJobRoles();
 
-    List<JobRole> getAllJobRoles();
 
 }

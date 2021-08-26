@@ -62,7 +62,7 @@ public class WebService {
 
             JobRoleMapper jobRoles = session.getMapper(JobRoleMapper.class);
 
-            List<JobRole> jobRoleList = jobRoles.getAllJobRoles();
+            List<JobRole> jobRoleList = jobRoles.getJobRoles();
             session.close();
             return(jobRoleList);
 
