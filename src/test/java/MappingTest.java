@@ -6,11 +6,11 @@ import org.junit.jupiter.api.Test;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
-public class ServiceTest {
+public class MappingTest {
 
     private static final ObjectMapper MAPPER = Jackson.newObjectMapper();
 
-    /*
+    /**
         Asserting that DBTest objects correctly map to a JSON object
         From: https://www.dropwizard.io/en/latest/manual/testing.html
      */
@@ -22,7 +22,7 @@ public class ServiceTest {
         assertThat(MAPPER.writeValueAsString(t)).isEqualTo(expected);
     }
 
-    /*
+    /**
         Checking the mapping from JSON to a DBTest object
      */
     @Test
