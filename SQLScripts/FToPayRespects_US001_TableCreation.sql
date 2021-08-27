@@ -7,17 +7,17 @@ DROP TABLE IF EXISTS JobBand;
 
 CREATE TABLE JobBand (
     JobBandID INT NOT NULL PRIMARY KEY,
-    JobBand VARCHAR(100)
+    JobBand VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE JobCapability (
 	JobCapabilityID INT NOT NULL PRIMARY KEY,
-    JobCapability VARCHAR(100)
+    JobCapability VARCHAR(100) NOT NULL
 );
 
 
 CREATE TABLE JobDiscipline (
- JobDisciplineID INT PRIMARY KEY auto_increment NOT NULL,
+ JobDisciplineID INT NOT NULL PRIMARY KEY,
  JobDiscipline VARCHAR(100) NOT NULL
 );
 
@@ -29,6 +29,7 @@ CREATE TABLE JobRoles (
     JobBand INT NOT NULL,
     JobCapability INT NOT NULL,
     JobCompetencies VARCHAR(5000),
+    JobProfileLink VARCHAR(500),
     RecordCreated TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
