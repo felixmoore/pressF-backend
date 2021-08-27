@@ -29,6 +29,7 @@ CREATE TABLE JobRoles (
     JobBand INT NOT NULL,
     JobCapability INT NOT NULL,
     JobCompetencies VARCHAR(5000),
+    JobProfileLink VARCHAR(500),
     RecordCreated TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
