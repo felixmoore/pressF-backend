@@ -142,4 +142,11 @@ JOIN JobBand jb ON JobRoles.JobBand = jb.JobBandID
 JOIN JobDiscipline jd ON JobRoles.JobDiscipline = jd.JobDisciplineID 
 JOIN JobCapability jc ON JobRoles.JobCapability = jc.JobCapabilityID;
 
-
+UPDATE JobRoles SET JobCompetencies = 'Leadership' WHERE JobRoleID = 1;
+UPDATE JobRoles SET JobCompetencies = '' WHERE JobRoleID = 2;
+UPDATE JobRoles SET JobCompetencies = '' WHERE JobRoleID = 3;
+UPDATE JobRoles SET JobCompetencies = '' WHERE JobRoleID = 4;
+UPDATE JobRoles SET JobCompetencies = '' WHERE JobRoleID = 5;
+UPDATE JobRoles SET JobCompetencies = '' WHERE JobRoleID = 6;
+UPDATE JobRoles SET JobCompetencies = '' WHERE JobRoleID = 7;
+UPDATE JobRoles SET JobCompetencies = '' WHERE JobRoleID = 8;
