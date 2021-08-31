@@ -1,8 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="WebServiceApplication" type="Application" factoryName="Application" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="com.kainos.ea.WebServiceApplication" />
+  <configuration default="false" name="JobSystemApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="com.kainos.ea.JobSystemApplication" />
     <module name="pressF-backend" />
-    <option name="PROGRAM_PARAMETERS" value="server" />
+    <option name="PROGRAM_PARAMETERS" value="server config.yml" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="com.kainos.ea.*" />

@@ -137,9 +137,6 @@ fabric.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij
 
-# Sharing run configurations
-/.idea/*
-!/.idea/runConfigurations
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/maven
@@ -166,3 +163,10 @@ buildNumber.properties
 .classpath
 
 # End of https://www.toptal.com/developers/gitignore/api/maven
+/config.yml
+
+.idea/checkstyle-idea.xml
+
+.idea/codeStyles/codeStyleConfig.xml
+
+.idea/codeStyles/Project.xml
