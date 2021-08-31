@@ -2,6 +2,7 @@ package com.kainos.ea.resources;
 
 import com.kainos.ea.db.JobRolesDAO;
 import com.kainos.ea.objects.JobRole;
+import io.swagger.annotations.Api;
 import java.util.List;
 import javax.ws.rs.GET;
 import javax.ws.rs.NotFoundException;
@@ -13,6 +14,7 @@ import javax.ws.rs.core.MediaType;
 /**
  * Defines API endpoints for the system.
  */
+@Api
 @Path("/api")
 @Produces(MediaType.APPLICATION_JSON)
 public class JobRolesResource {
@@ -38,6 +40,4 @@ public class JobRolesResource {
   public List<JobRole> getJobRoles() {
     return jobRolesDAO.getJobRoles();
   }
-
-
 }
