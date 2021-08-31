@@ -18,6 +18,9 @@ database:
   user: 
   password: 
   url:
+
+swagger:
+  resourcePackage: com.kainos.ea.resources
 ```
 
 ## Linting - CheckStyle
