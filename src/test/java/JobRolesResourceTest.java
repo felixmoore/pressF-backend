@@ -10,6 +10,8 @@ import com.kainos.ea.db.JobRolesDAO;
 import com.kainos.ea.objects.JobRole;
 import com.kainos.ea.resources.JobRolesResource;
 import io.dropwizard.testing.junit5.DropwizardExtensionsSupport;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import javax.ws.rs.NotFoundException;
 import org.junit.jupiter.api.AfterEach;
@@ -22,20 +24,31 @@ class JobRolesResourceTest {
   private static JobRolesDAO jobRolesDAO;
   private JobRolesResource resource;
   private JobRole jobRole;
+  private ArrayList<JobRole> jobRoles;
 
+  // Creates DAO and mock data for use in later tests
   @BeforeEach
   void setup() {
     jobRolesDAO = mock(JobRolesDAO.class);
     resource = new JobRolesResource(jobRolesDAO);
     jobRole = new JobRole();
     jobRole.setJobRoleID(1);
+    jobRoles = new ArrayList<>();
+    jobRoles.add(jobRole);
   }
 
-  @AfterEach
-  void tearDown() {
-    reset(jobRolesDAO);
+  // Checking happy path functionality of getJobRoles
+  @Test
+  void getJobRolesSuccess() {
+    when(jobRolesDAO.getJobRoles()).thenReturn(jobRoles);
+
+    List<JobRole> result = resource.getJobRoles();
+    assertThat(result.get(0)).isEqualTo(jobRole);
+
+    verify(jobRolesDAO).getJobRoles();
   }
 
+  // Checking happy path functionality of getJobRoleDetails
   @Test
   void getJobRoleDetailsSuccess() {
     when(jobRolesDAO.getJobRoleDetails(1)).thenReturn(Optional.of(jobRole));
@@ -46,8 +59,9 @@ class JobRolesResourceTest {
     verify(jobRolesDAO).getJobRoleDetails(1);
   }
 
+  // Checking functionality of getJobRoleDetails when JobRole does not exist
   @Test
-  void getPersonNotFound() {
+  void getJobRoleNotFound() {
     when(jobRolesDAO.getJobRoleDetails(8)).thenReturn(Optional.empty());
 
     Exception e = assertThrows(NotFoundException.class, () -> {
@@ -56,5 +70,10 @@ class JobRolesResourceTest {
 
     assertTrue(e.getMessage().contains(("Job role not found.")));
     verify(jobRolesDAO).getJobRoleDetails(8);
+  }
+
+  @AfterEach
+  void tearDown() {
+    reset(jobRolesDAO);
   }
 }
