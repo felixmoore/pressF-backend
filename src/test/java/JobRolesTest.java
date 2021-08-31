@@ -5,8 +5,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kainos.ea.objects.JobRole;
 import io.dropwizard.jackson.Jackson;
 
-;
-
 public class JobRolesTest {
 
   private static final ObjectMapper MAPPER = Jackson.newObjectMapper();
