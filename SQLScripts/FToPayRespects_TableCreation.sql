@@ -33,7 +33,15 @@ CREATE TABLE JobRoles (
     RecordCreated TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-ALTER TABLE JobRoles ADD CONSTRAINT FK_JobDiscipline FOREIGN KEY (JobDiscipline) references JobDiscipline (JobDisciplineID);
-ALTER TABLE JobRoles ADD CONSTRAINT FK_JobCapability FOREIGN KEY (JobCapability) references JobCapability(JobCapabilityID);
-ALTER TABLE JobRoles ADD CONSTRAINT FK_JobBand FOREIGN KEY (JobBand) references JobBand (JobBandID);
+ALTER TABLE JobRoles ADD CONSTRAINT FK_JobDiscipline FOREIGN KEY (JobDiscipline) REFERENCES JobDiscipline (JobDisciplineID);
+ALTER TABLE JobRoles ADD CONSTRAINT FK_JobCapability FOREIGN KEY (JobCapability) REFERENCES JobCapability(JobCapabilityID);
+ALTER TABLE JobRoles ADD CONSTRAINT FK_JobBand FOREIGN KEY (JobBand) REFERENCES JobBand (JobBandID);
+
+CREATE TABLE JobRoleResponsibilities (
+	JobRoleResponsibilityID INT NOT NULL PRIMARY KEY auto_increment,
+	JobRoleID INT NOT NULL,
+    JobRoleResponsibility VARCHAR(1000) NOT NULL,
+    
+    CONSTRAINT FK_JobRole FOREIGN KEY (JobRoleID) REFERENCES JobRoles (JobRoleID)
+);
 
