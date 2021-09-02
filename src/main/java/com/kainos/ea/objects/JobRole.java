@@ -1,5 +1,8 @@
 package com.kainos.ea.objects;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Kainos Job Capability property (e.g. Software Engineer)
  */
@@ -14,6 +17,7 @@ public class JobRole {
   private String jobDiscipline;
   private String jobProfileLink;
   private String recordCreated;
+  private List<JobRoleResponsibilities> jobRoleResponsibilities;
 
   public JobRole() {
   }
@@ -28,6 +32,19 @@ public class JobRole {
     this.jobCapability = jobCapability;
     this.jobCompetencies = jobCompetencies;
     this.jobDiscipline = jobDiscipline;
+  }
+
+  public JobRole(int jobRoleID, String jobTitle, String jobSpecification, String jobBand,
+                 String jobCapability, String jobCompetencies, String jobDiscipline, List<JobRoleResponsibilities> jobRoleResponsibilities) {
+    super();
+    this.jobRoleID = jobRoleID;
+    this.jobTitle = jobTitle;
+    this.jobSpecification = jobSpecification;
+    this.jobBand = jobBand;
+    this.jobCapability = jobCapability;
+    this.jobCompetencies = jobCompetencies;
+    this.jobDiscipline = jobDiscipline;
+    this.jobRoleResponsibilities = jobRoleResponsibilities;
   }
 
   public int getJobRoleID() {
@@ -100,6 +117,14 @@ public class JobRole {
 
   public void setRecordCreated(String recordCreated) {
     this.recordCreated = recordCreated;
+  }
+
+  public List<JobRoleResponsibilities> getJobRoleResponsibilities() {
+    return jobRoleResponsibilities;
+  }
+
+  public void setJobRoleResponsibilities(List<JobRoleResponsibilities> jobRoleResponsibilities) {
+    this.jobRoleResponsibilities = jobRoleResponsibilities;
   }
 
   @Override
