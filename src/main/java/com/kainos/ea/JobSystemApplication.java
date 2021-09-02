@@ -6,6 +6,8 @@ import io.dropwizard.Application;
 import io.dropwizard.jdbi3.JdbiFactory;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import io.federecio.dropwizard.swagger.SwaggerBundle;
+import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
 import org.jdbi.v3.core.Jdbi;
 
 /**
@@ -24,8 +26,15 @@ public class JobSystemApplication extends Application<JobSystemConfiguration> {
   }
 
   @Override
-  public void initialize(final Bootstrap<JobSystemConfiguration> bootstrap) {
+  public void initialize(Bootstrap<JobSystemConfiguration> bootstrap) {
+    bootstrap.addBundle(new SwaggerBundle<>() {
+      @Override
+      protected SwaggerBundleConfiguration getSwaggerBundleConfiguration(JobSystemConfiguration configuration) {
+        return configuration.getSwagger();
+      }
+    });
   }
+
 
   @Override
   public void run(final JobSystemConfiguration configuration,
