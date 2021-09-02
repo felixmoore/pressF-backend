@@ -2,6 +2,7 @@ package com.kainos.ea.resources;
 
 import com.kainos.ea.db.JobRolesDAO;
 import com.kainos.ea.objects.JobRole;
+import com.kainos.ea.objects.JobRoleResponsibilities;
 import io.swagger.annotations.Api;
 import java.util.List;
 import javax.ws.rs.GET;
@@ -28,7 +29,10 @@ public class JobRolesResource {
   @GET
   @Path("/getjobroledetails/{id}")
   public JobRole getJobRoleDetails(@PathParam("id") int jobRoleID) {
-    return findSafely(jobRoleID);
+    JobRole jobRole = findSafely(jobRoleID);
+    jobRole.setJobRoleResponsibilities(jobRolesDAO.getJobResponsibilities(jobRoleID));
+
+    return jobRole;
   }
 
   private JobRole findSafely(int jobRoleID) {

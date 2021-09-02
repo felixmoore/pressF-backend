@@ -163,7 +163,7 @@ buildNumber.properties
 .classpath
 
 # End of https://www.toptal.com/developers/gitignore/api/maven
-/config.yml
+/src/main/resources/config.yml
 
 .idea/checkstyle-idea.xml
 
