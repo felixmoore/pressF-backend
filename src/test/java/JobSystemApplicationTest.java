@@ -10,6 +10,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 /**
  * Testing that the main application can initialise correctly.
+ * https://www.dropwizard.io/en/latest/manual/testing.html#junit-5
  */
 @ExtendWith(DropwizardExtensionsSupport.class)
 public class JobSystemApplicationTest {
