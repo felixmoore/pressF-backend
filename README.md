@@ -40,6 +40,6 @@ swagger:
 
 ## Running Swagger:
 	
-Open a browser http://localhost:<your port>/swagger
+Open a browser http://localhost:8080/swagger
 
 
