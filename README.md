@@ -6,11 +6,11 @@ http://localhost:8080/api/getjobroles
 
 Main class: com.kainos.ea.JobSystemApplication 
 
-Arguments: server config.yml
+Arguments: server src/main/resources/config.yml
 
 ## config.yml
 
-Located in project root, format:
+Located in src/main/resources/, format:
 
 ```
 database:
@@ -36,3 +36,10 @@ swagger:
 ### Auto formatting
 - Preferences -> Editor -> Code Style -> Gear icon next to 'Scheme' -> Import Scheme -> CheckStyle Configuration
 - Right click any file or directory & click 'Reformat Code'
+
+
+## Running Swagger:
+	
+Open a browser http://localhost:<your port>/swagger
+
+
