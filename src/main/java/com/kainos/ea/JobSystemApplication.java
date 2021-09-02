@@ -16,7 +16,7 @@ import org.jdbi.v3.core.Jdbi;
 public class JobSystemApplication extends Application<JobSystemConfiguration> {
 
   public static void main(final String[] args) throws Exception {
-    // "server config.yml" should be in args
+    // "server src/main/resources/config.yml" should be in args
     new JobSystemApplication().run(args);
   }
 
