@@ -2,7 +2,6 @@ package com.kainos.ea.resources;
 
 import com.kainos.ea.db.JobRolesDAO;
 import com.kainos.ea.objects.JobRole;
-import com.kainos.ea.objects.JobRoleResponsibilities;
 import io.swagger.annotations.Api;
 import java.util.List;
 import javax.ws.rs.GET;
@@ -13,7 +12,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 /**
- * Defines API endpoints for the system.
+ * Defines API endpoints for the JobRoles section of the system.
  */
 @Api
 @Path("/api")
