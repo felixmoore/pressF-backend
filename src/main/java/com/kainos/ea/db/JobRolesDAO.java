@@ -1,10 +1,10 @@
 package com.kainos.ea.db;
 
-import com.kainos.ea.objects.JobRole;
+import com.kainos.ea.objects.*;
+
 import java.util.List;
 import java.util.Optional;
 
-import com.kainos.ea.objects.JobRoleResponsibilities;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
@@ -29,4 +29,16 @@ public interface JobRolesDAO {
   @SqlQuery("SELECT JobRoleResponsibility FROM JobRoleResponsibilities WHERE JobRoleID = :jobRoleId")
   @RegisterBeanMapper(JobRoleResponsibilities.class)
   List<JobRoleResponsibilities> getJobResponsibilities(@Bind("jobRoleId") int jobRoleId);
+
+  @SqlQuery("SELECT DISTINCT JobBand FROM JobBand")
+  @RegisterBeanMapper(JobBand.class)
+  List<JobBand> getJobBand();
+
+  @SqlQuery("SELECT DISTINCT JobCapability FROM JobCapability")
+  @RegisterBeanMapper(JobCapability.class)
+  List<JobCapability> getJobCapability();
+
+  @SqlQuery("SELECT DISTINCT JobDiscipline FROM JobDiscipline")
+  @RegisterBeanMapper(JobDiscipline.class)
+  List<JobDiscipline> getJobDiscipline();
 }

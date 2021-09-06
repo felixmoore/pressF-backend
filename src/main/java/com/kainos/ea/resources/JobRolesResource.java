@@ -1,8 +1,7 @@
 package com.kainos.ea.resources;
 
 import com.kainos.ea.db.JobRolesDAO;
-import com.kainos.ea.objects.JobRole;
-import com.kainos.ea.objects.JobRoleResponsibilities;
+import com.kainos.ea.objects.*;
 import io.swagger.annotations.Api;
 import java.util.List;
 import javax.ws.rs.GET;
@@ -44,4 +43,16 @@ public class JobRolesResource {
   public List<JobRole> getJobRoles() {
     return jobRolesDAO.getJobRoles();
   }
+
+  @GET
+  @Path("/getjobband")
+  public List<JobBand> getJobBand() { return jobRolesDAO.getJobBand(); }
+
+  @GET
+  @Path("/getjobcapability")
+  public List<JobCapability> getJobCapability() { return jobRolesDAO.getJobCapability(); }
+
+  @GET
+  @Path("/getjobdiscipline")
+  public List<JobDiscipline> getJobDiscipline() { return jobRolesDAO.getJobDiscipline(); }
 }

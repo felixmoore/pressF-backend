@@ -5,31 +5,21 @@ package com.kainos.ea.objects;
  */
 public class JobBand {
 
-  private int jobBandId;
-  private JobBand jobBand;
+  private String jobBand;
 
   public JobBand() {
   }
 
-  public JobBand(int jobBandId, JobBand jobBand) {
+  public JobBand(String jobBand) {
     super();
-    this.jobBandId = jobBandId;
     this.jobBand = jobBand;
   }
 
-  public int getJobBandId() {
-    return jobBandId;
-  }
-
-  public void setJobBandId(int jobBandId) {
-    this.jobBandId = jobBandId;
-  }
-
-  public JobBand getJobBand() {
+  public String getJobBand() {
     return jobBand;
   }
 
-  public void setJobBand(JobBand jobBand) {
+  public void setJobBand(String jobBand) {
     this.jobBand = jobBand;
   }
 }
