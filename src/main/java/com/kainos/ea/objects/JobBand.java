@@ -7,6 +7,7 @@ public class JobBand {
 
   private int jobBandId;
   private String jobBand;
+  private String jobBandTraining;
 
   public JobBand() {
   }
@@ -24,7 +25,20 @@ public class JobBand {
     this.jobBand = jobBand;
   }
 
-  public void setJobBandId(int jobBandId) { this.jobBandId = jobBandId; }
+  public void setJobBandId(int jobBandId) {
+    this.jobBandId = jobBandId;
+  }
 
-  public int getJobBandId() { return jobBandId; }
+  public int getJobBandId() {
+    return jobBandId;
+  }
+
+  public String getJobBandTraining() {
+    return jobBandTraining;
+  }
+
+  public void setJobBandTraining(String jobBandTraining) {
+    this.jobBandTraining = jobBandTraining;
+  }
+
 }

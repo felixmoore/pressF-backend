@@ -21,7 +21,7 @@ public interface JobRolesDAO {
   List<JobRole> getJobRoles();
 
   @SqlQuery(
-          "SELECT JobRoleID, JobTitle, JobSpecification, jc.JobCapability, jd.JobDiscipline, jb.JobBand, JobCompetencies, JobProfileLink, RecordCreated "
+          "SELECT JobRoleID, JobTitle, JobSpecification, jc.JobCapability, jd.JobDiscipline, jb.JobBand, jb.JobBandTraining, JobCompetencies, JobProfileLink, RecordCreated "
                   + "FROM JobRoles JOIN JobBand jb ON JobRoles.JobBand = jb.JobBandID JOIN JobDiscipline jd ON JobRoles.JobDiscipline = jd.JobDisciplineID "
                   + "JOIN JobCapability jc ON JobRoles.JobCapability = jc.JobCapabilityID WHERE JobRoleID = :jobRoleId")
   @RegisterBeanMapper(JobRole.class)
@@ -52,8 +52,8 @@ public interface JobRolesDAO {
   @RegisterBeanMapper(JobDiscipline.class)
   List<JobDiscipline> getJobDiscipline();
 
-  @SqlUpdate("INSERT INTO JobBand (JobBand) VALUES (:jobBand );")
-  boolean addJobBand(@Bind("jobBand") String jobBand);
+  @SqlUpdate("INSERT INTO JobBand (JobBand, JobBandTraining) VALUES (:jobBand, :jobBandTraining );")
+  boolean addJobBand(@Bind("jobBand") String jobBand, @Bind("jobBandTraining") String jobBandTraining);
 
   @SqlUpdate("INSERT INTO JobBand (JobBand) VALUES (:jobCapability );")
   boolean addJobCapability(@Bind("jobCapability") String jobCapability);

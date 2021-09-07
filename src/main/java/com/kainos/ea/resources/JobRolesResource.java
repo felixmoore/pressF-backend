@@ -51,14 +51,14 @@ public class JobRolesResource {
   @Path("/addjobband")
   @Consumes(MediaType.APPLICATION_JSON)
   public boolean addJobRole(JobBand jobBand) {
-    return jobRolesDAO.addJobBand(jobBand.getJobBand());
+    return jobRolesDAO.addJobBand(jobBand.getJobBand(), jobBand.getJobBandTraining());
   }
 
   @POST
   @Path("/addjobcapability")
   @Consumes(MediaType.APPLICATION_JSON)
   public boolean addJobRole(JobCapability jobCapability) {
-    return jobRolesDAO.addJobBand(jobCapability.getJobCapability());
+    return jobRolesDAO.addJobCapability(jobCapability.getJobCapability());
   }
 
   @GET

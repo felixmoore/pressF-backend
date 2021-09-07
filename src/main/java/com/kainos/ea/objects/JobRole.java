@@ -12,6 +12,7 @@ public class JobRole {
   private String jobTitle;
   private String jobSpecification;
   private String jobBand;
+  private String jobBandTraining;
   private String jobCapability;
   private String jobCompetencies;
   private String jobDiscipline;
@@ -25,19 +26,20 @@ public class JobRole {
   public JobRole() {
   }
 
-  public JobRole(int jobRoleID, String jobTitle, String jobSpecification, String jobBand,
+  public JobRole(int jobRoleID, String jobTitle, String jobSpecification, String jobBand, String jobBandTraining,
                  String jobCapability, String jobCompetencies, String jobDiscipline) {
     super();
     this.jobRoleID = jobRoleID;
     this.jobTitle = jobTitle;
     this.jobSpecification = jobSpecification;
     this.jobBand = jobBand;
+    this.jobBandTraining = jobBandTraining;
     this.jobCapability = jobCapability;
     this.jobCompetencies = jobCompetencies;
     this.jobDiscipline = jobDiscipline;
   }
 
-  public JobRole(int jobRoleID, String jobTitle, String jobSpecification, String jobBand,
+  public JobRole(int jobRoleID, String jobTitle, String jobSpecification, String jobBand, String jobBandTraining,
                  String jobCapability, String jobCompetencies, String jobDiscipline, List<JobRoleResponsibilities> jobRoleResponsibilities) {
     super();
     this.jobRoleID = jobRoleID;
@@ -48,6 +50,7 @@ public class JobRole {
     this.jobCompetencies = jobCompetencies;
     this.jobDiscipline = jobDiscipline;
     this.jobRoleResponsibilities = jobRoleResponsibilities;
+    this.jobBandTraining = jobBandTraining;
   }
 
   public int getJobRoleID() {
@@ -144,6 +147,14 @@ public class JobRole {
 
   public void setJobDisciplineId(int jobDisciplineId) {
     this.jobDisciplineId = jobDisciplineId;
+  }
+
+  public void setJobBandTraining(String jobBandTraining) {
+    this.jobBandTraining = jobBandTraining;
+  }
+
+  public String getJobBandTraining() {
+    return jobBandTraining;
   }
 
   @Override
