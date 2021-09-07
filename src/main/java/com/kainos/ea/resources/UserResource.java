@@ -10,7 +10,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 
-
 /**
  * Defines API endpoints for the User section of the system.
  */

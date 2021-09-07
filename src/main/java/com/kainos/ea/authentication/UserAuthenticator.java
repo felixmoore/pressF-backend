@@ -19,7 +19,7 @@ public class UserAuthenticator implements Authenticator<BasicCredentials, User> 
   public Optional<User> authenticate(BasicCredentials credentials) throws AuthenticationException {
     // Pulls user info from the DAO, checks against the given credentials
     List<String> retrieved = userDAO.getUserDetails(credentials.getUsername(), credentials.getPassword());
-    if (retrieved != null){
+    if (retrieved != null) {
       if (retrieved.get(0).equals(credentials.getUsername()) &&
           retrieved.get(1).equals(credentials.getPassword())) {
         return Optional.of(new User(credentials.getUsername(), retrieved.get(2)));

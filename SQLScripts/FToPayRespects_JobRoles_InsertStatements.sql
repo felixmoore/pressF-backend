@@ -549,3 +549,11 @@ Setting Direction, Development and Accountability - Prioritise and communicate e
 Supporting and Delivering the Strategy - Articulates individual contribution to the wider Kainos objectives, clearly defines how individual personal performance can have an impact on the business, respects differences and promotes inclusion.
 Commerciality and Risk - Comprehends the need for the business to generate additional income and respects that costs need to be managed, considers and suggests ideas for improvements.
 Communicating and Influence - Involved at meetings, asking questions, remaining communicative, demonstrates influencing skills, demonstrates how to participate in stakeholder management.' WHERE JobRoleID = 9;
+
+
+INSERT INTO Users VALUES ('email@test.com', SHA2('password', 256), 0);
+INSERT INTO Users VALUES ('admin@test.com', SHA2('password', 256), 1);
+
+SELECT * FROM Users;
+SELECT * FROM Sessions;
+
