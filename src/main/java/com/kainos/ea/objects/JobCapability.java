@@ -17,14 +17,6 @@ public class JobCapability {
     this.jobCapability = jobCapability;
   }
 
-  public int getJobCapabilityId() {
-    return jobCapabilityId;
-  }
-
-  public void setJobCapabilityId(int jobCapabilityId) {
-    this.jobCapabilityId = jobCapabilityId;
-  }
-
   public String getJobCapability() {
     return jobCapability;
   }
