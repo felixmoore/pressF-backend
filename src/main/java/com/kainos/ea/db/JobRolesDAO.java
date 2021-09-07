@@ -15,15 +15,15 @@ import org.jdbi.v3.sqlobject.statement.SqlUpdate;
  */
 public interface JobRolesDAO {
   @SqlQuery("SELECT JobRoleID, JobTitle, JobSpecification, jc.JobCapability, jd.JobDiscipline, jb.JobBand, JobCompetencies, RecordCreated "
-      + "FROM JobRoles JOIN JobBand jb ON JobRoles.JobBand = jb.JobBandID JOIN JobDiscipline jd ON JobRoles.JobDiscipline = jd.JobDisciplineID "
-      + "JOIN JobCapability jc ON JobRoles.JobCapability = jc.JobCapabilityID")
+          + "FROM JobRoles JOIN JobBand jb ON JobRoles.JobBand = jb.JobBandID JOIN JobDiscipline jd ON JobRoles.JobDiscipline = jd.JobDisciplineID "
+          + "JOIN JobCapability jc ON JobRoles.JobCapability = jc.JobCapabilityID")
   @RegisterBeanMapper(JobRole.class)
   List<JobRole> getJobRoles();
 
   @SqlQuery(
-      "SELECT JobRoleID, JobTitle, JobSpecification, jc.JobCapability, jd.JobDiscipline, jb.JobBand, JobCompetencies, JobProfileLink, RecordCreated "
-          + "FROM JobRoles JOIN JobBand jb ON JobRoles.JobBand = jb.JobBandID JOIN JobDiscipline jd ON JobRoles.JobDiscipline = jd.JobDisciplineID "
-          + "JOIN JobCapability jc ON JobRoles.JobCapability = jc.JobCapabilityID WHERE JobRoleID = :jobRoleId")
+          "SELECT JobRoleID, JobTitle, JobSpecification, jc.JobCapability, jd.JobDiscipline, jb.JobBand, JobCompetencies, JobProfileLink, RecordCreated "
+                  + "FROM JobRoles JOIN JobBand jb ON JobRoles.JobBand = jb.JobBandID JOIN JobDiscipline jd ON JobRoles.JobDiscipline = jd.JobDisciplineID "
+                  + "JOIN JobCapability jc ON JobRoles.JobCapability = jc.JobCapabilityID WHERE JobRoleID = :jobRoleId")
   @RegisterBeanMapper(JobRole.class)
   Optional<JobRole> getJobRoleDetails(@Bind("jobRoleId") int jobRoleId);
 
@@ -39,7 +39,7 @@ public interface JobRolesDAO {
           ":jobBandId, :jobCompetencies);")
   boolean addJobRole(@Bind("jobTitle") String jobTitle, @Bind("jobSpecification") String jobSpecification, @Bind("jobCapabilityId") int jobCapabilityId, @Bind("jobDisciplineId") int jobDisciplineId,
                      @Bind("jobBandId") int jobBandId, @Bind("jobCompetencies") String jobCompetencies);
-                     
+
   @SqlQuery("SELECT DISTINCT JobBandID, JobBand FROM JobBand")
   @RegisterBeanMapper(JobBand.class)
   List<JobBand> getJobBand();
@@ -51,4 +51,11 @@ public interface JobRolesDAO {
   @SqlQuery("SELECT DISTINCT JobDisciplineID, JobDiscipline FROM JobDiscipline")
   @RegisterBeanMapper(JobDiscipline.class)
   List<JobDiscipline> getJobDiscipline();
+
+  @SqlUpdate("INSERT INTO JobBand (JobBand) VALUES (:jobBand );")
+  boolean addJobBand(@Bind("jobBand") String jobBand);
+
+  @SqlUpdate("INSERT INTO JobBand (JobBand) VALUES (:jobCapability );")
+  boolean addJobCapability(@Bind("jobCapability") String jobCapability);
+
 }
