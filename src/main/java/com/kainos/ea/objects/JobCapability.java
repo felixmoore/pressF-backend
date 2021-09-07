@@ -4,7 +4,6 @@ package com.kainos.ea.objects;
  * Kainos Job Capability property (e.g. Engineering)
  */
 public class JobCapability {
-  //    **JobCapability** - JobCapabilityID (INT), JobCapability (VARCHAR)
   private int jobCapabilityId;
   private String jobCapability;
 
@@ -24,4 +23,13 @@ public class JobCapability {
   public void setJobCapability(String jobCapability) {
     this.jobCapability = jobCapability;
   }
+
+  public int getJobCapabilityId() {
+    return jobCapabilityId;
+  }
+
+  public void setJobCapabilityId(int jobCapabilityId) {
+    this.jobCapabilityId = jobCapabilityId;
+  }
+
 }

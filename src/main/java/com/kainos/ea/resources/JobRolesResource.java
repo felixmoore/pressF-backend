@@ -40,11 +40,16 @@ public class JobRolesResource {
     return jobRolesDAO.getJobRoles();
   }
 
+
+
+
   @POST
   @Path("/addjobrole")
+  @Consumes(MediaType.APPLICATION_JSON)
   public boolean addJobRole(JobRole jobRole) {
-    return jobRolesDAO.addJobRole(jobRole.getJobTitle(), jobRole.getJobSpecification(), jobRole.getJobCapability(), jobRole.getJobDiscipline(), jobRole.getJobBand());
+    return jobRolesDAO.addJobRole(jobRole.getJobTitle(), jobRole.getJobSpecification(), jobRole.getJobCapabilityId(), jobRole.getJobDisciplineId(), jobRole.getJobBandId(), jobRole.getJobCompetencies());
   }
+
   @GET
   @Path("/getjobband")
   public List<JobBand> getJobBand() { return jobRolesDAO.getJobBand(); }

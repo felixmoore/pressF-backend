@@ -17,6 +17,9 @@ public class JobRole {
   private String jobDiscipline;
   private String jobProfileLink;
   private String recordCreated;
+  private int jobCapabilityId;
+  private int jobBandId;
+  private int jobDisciplineId;
   private List<JobRoleResponsibilities> jobRoleResponsibilities;
 
   public JobRole() {
@@ -125,6 +128,22 @@ public class JobRole {
 
   public void setJobRoleResponsibilities(List<JobRoleResponsibilities> jobRoleResponsibilities) {
     this.jobRoleResponsibilities = jobRoleResponsibilities;
+  }
+
+  public int getJobBandId(){ return jobBandId; }
+
+  public void setJobBandId(int jobBandId) { this.jobBandId = jobBandId; }
+
+  public int getJobCapabilityId(){ return jobCapabilityId; }
+
+  public void setJobCapabilityId(int jobCapabilityId) { this.jobCapabilityId = jobCapabilityId; }
+
+  public int getJobDisciplineId() {
+    return jobDisciplineId;
+  }
+
+  public void setJobDisciplineId(int jobDisciplineId) {
+    this.jobDisciplineId = jobDisciplineId;
   }
 
   @Override

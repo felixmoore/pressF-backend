@@ -31,25 +31,24 @@ public interface JobRolesDAO {
   @RegisterBeanMapper(JobRoleResponsibilities.class)
   List<JobRoleResponsibilities> getJobResponsibilities(@Bind("jobRoleId") int jobRoleId);
 
-  @SqlUpdate("INSERT INTO JobRoles (JobTitle, JobSpecification, JobCapability, JobDiscipline, JobBand, JobCompetencies, JobProfileLink) \n" +
-          "VALUES (:jobTitle\n" +
-          "\t\t, :jobSpecification\n" +
-          "\t\t(SELECT JobCapabilityID FROM JobCapability WHERE JobCapability = :jobCapability),\n" +
-          "\t\t(SELECT JobDisciplineID FROM JobDiscipline WHERE JobDiscipline = :jobDiscipline),\n" +
-          "\t\t(SELECT JobBandID FROM JobBand WHERE JobBand = :jobBand),\n" +
-          ");")
-  boolean addJobRole(@Bind("jobTitle") String jobTitle, @Bind("jobSpecification") String jobSpecification, @Bind("jobCapability") String jobCapability, @Bind("jobDiscipline") String jobDiscipline,
-                     @Bind("jobBand") String jobBand);
+  @SqlUpdate("INSERT INTO JobRoles (JobTitle, JobSpecification, JobCapability, JobDiscipline, JobBand, JobCompetencies)" +
+          "VALUES (:jobTitle," +
+          ":jobSpecification," +
+          ":jobCapabilityId," +
+          ":jobDisciplineId," +
+          ":jobBandId, :jobCompetencies);")
+  boolean addJobRole(@Bind("jobTitle") String jobTitle, @Bind("jobSpecification") String jobSpecification, @Bind("jobCapabilityId") int jobCapabilityId, @Bind("jobDisciplineId") int jobDisciplineId,
+                     @Bind("jobBandId") int jobBandId, @Bind("jobCompetencies") String jobCompetencies);
                      
-  @SqlQuery("SELECT DISTINCT JobBand FROM JobBand")
+  @SqlQuery("SELECT DISTINCT JobBandID, JobBand FROM JobBand")
   @RegisterBeanMapper(JobBand.class)
   List<JobBand> getJobBand();
 
-  @SqlQuery("SELECT DISTINCT JobCapability FROM JobCapability")
+  @SqlQuery("SELECT DISTINCT JobCapabilityID, JobCapability FROM JobCapability")
   @RegisterBeanMapper(JobCapability.class)
   List<JobCapability> getJobCapability();
 
-  @SqlQuery("SELECT DISTINCT JobDiscipline FROM JobDiscipline")
+  @SqlQuery("SELECT DISTINCT JobDisciplineID, JobDiscipline FROM JobDiscipline")
   @RegisterBeanMapper(JobDiscipline.class)
   List<JobDiscipline> getJobDiscipline();
 }
