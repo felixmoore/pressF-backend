@@ -1,6 +1,5 @@
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.verify;
@@ -33,6 +32,12 @@ class JobRolesResourceTest {
     resource = new JobRolesResource(jobRolesDAO);
     jobRole = new JobRole();
     jobRole.setJobRoleID(1);
+    jobRole.setJobTitle("Test");
+    jobRole.setJobSpecification("Test Spec");
+    jobRole.setJobBand("1");
+    jobRole.setJobCapability("2");
+    jobRole.setJobDiscipline("1");
+    jobRole.setJobCompetencies("Test competencies");
     jobRoles = new ArrayList<>();
     jobRoles.add(jobRole);
   }
@@ -70,6 +75,24 @@ class JobRolesResourceTest {
 
     assertTrue(e.getMessage().contains(("Job role not found.")));
     verify(jobRolesDAO).getJobRoleDetails(8);
+  }
+
+  @Test
+  void addJobRoleSuccess() {
+    when(jobRolesDAO.addJobRole("Test", "Test Spec", 0, 0, 0, "Test competencies")).thenReturn(true);
+    boolean result = resource.addJobRole(jobRole);
+    assertEquals(true, result);
+
+    verify(jobRolesDAO).addJobRole("Test", "Test Spec", 0, 0, 0, "Test competencies");
+  }
+
+  @Test
+  void addJobRoleFailure() {
+    when(jobRolesDAO.addJobRole("Test", "Test Spec", 0, 0, 0, "Test competencies")).thenReturn(false);
+    boolean result = resource.addJobRole(jobRole);
+    assertEquals(false, result);
+
+    verify(jobRolesDAO).addJobRole("Test", "Test Spec", 0, 0, 0, "Test competencies");
   }
 
   @AfterEach
