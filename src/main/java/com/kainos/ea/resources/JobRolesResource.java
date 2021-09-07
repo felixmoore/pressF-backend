@@ -5,11 +5,7 @@ import com.kainos.ea.objects.JobRole;
 import com.kainos.ea.objects.JobRoleResponsibilities;
 import io.swagger.annotations.Api;
 import java.util.List;
-import javax.ws.rs.GET;
-import javax.ws.rs.NotFoundException;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -43,5 +39,11 @@ public class JobRolesResource {
   @Path("/getjobroles")
   public List<JobRole> getJobRoles() {
     return jobRolesDAO.getJobRoles();
+  }
+
+  @POST
+  @Path("/addjobrole")
+  public boolean addJobRole(JobRole jobRole) {
+    return jobRolesDAO.addJobRole(jobRole.getJobTitle(), jobRole.getJobSpecification(), jobRole.getJobCapability(), jobRole.getJobDiscipline(), jobRole.getJobBand());
   }
 }
