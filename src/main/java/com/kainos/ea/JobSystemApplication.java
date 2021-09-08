@@ -4,11 +4,9 @@ package com.kainos.ea;
 import com.kainos.ea.authentication.UserAuthenticator;
 import com.kainos.ea.authentication.UserAuthoriser;
 import com.kainos.ea.db.JobRolesDAO;
-import com.kainos.ea.db.SessionDAO;
 import com.kainos.ea.db.UserDAO;
 import com.kainos.ea.objects.User;
 import com.kainos.ea.resources.JobRolesResource;
-import com.kainos.ea.resources.SessionResource;
 import com.kainos.ea.resources.UserResource;
 import io.dropwizard.Application;
 import io.dropwizard.auth.AuthDynamicFeature;
@@ -57,7 +55,6 @@ public class JobSystemApplication extends Application<JobSystemConfiguration> {
     // Registering API endpoints
     environment.jersey().register(new JobRolesResource(jdbi.onDemand(JobRolesDAO.class)));
     environment.jersey().register(new UserResource(jdbi.onDemand(UserDAO.class)));
-    environment.jersey().register(new SessionResource(jdbi.onDemand(SessionDAO.class)));
     // Registering authentication & authorisation
     environment.jersey().register(new AuthValueFactoryProvider.Binder<>(User.class));
     environment.jersey().register(new AuthDynamicFeature(
