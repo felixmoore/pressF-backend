@@ -55,7 +55,7 @@ public interface JobRolesDAO {
   @SqlUpdate("INSERT INTO JobBand (JobBand, JobBandTraining) VALUES (:jobBand, :jobBandTraining );")
   boolean addJobBand(@Bind("jobBand") String jobBand, @Bind("jobBandTraining") String jobBandTraining);
 
-  @SqlUpdate("INSERT INTO JobBand (JobBand) VALUES (:jobCapability );")
+  @SqlUpdate("INSERT INTO JobCapability (JobCapability) VALUES (:jobCapability );")
   boolean addJobCapability(@Bind("jobCapability") String jobCapability);
 
 }
