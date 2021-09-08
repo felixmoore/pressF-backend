@@ -551,9 +551,8 @@ Commerciality and Risk - Comprehends the need for the business to generate addit
 Communicating and Influence - Involved at meetings, asking questions, remaining communicative, demonstrates influencing skills, demonstrates how to participate in stakeholder management.' WHERE JobRoleID = 9;
 
 
-INSERT INTO Users VALUES ('email@test.com', SHA2('password', 256), 0);
-INSERT INTO Users VALUES ('admin@test.com', SHA2('password', 256), 1);
+INSERT INTO Users VALUES ('email@kainos.com', SHA2('password', 256), 0);
+INSERT INTO Users VALUES ('admin@kainos.com', SHA2('password', 256), 1);
 
 SELECT * FROM Users;
-SELECT * FROM Sessions;
 
