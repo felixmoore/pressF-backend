@@ -8,46 +8,46 @@ SELECT * FROM JobDiscipline;
 
 SELECT * FROM JobRoles;
 
-INSERT INTO JobBand VALUES (0, 'Leadership');
-INSERT INTO JobBand VALUES (1, 'Principle');
-INSERT INTO JobBand VALUES (2, 'Manager');
-INSERT INTO JobBand VALUES (3, 'Consultant');
-INSERT INTO JobBand VALUES (4, 'Senior Associate');
-INSERT INTO JobBand VALUES (5, 'Associate');
-INSERT INTO JobBand VALUES (6, 'Trainee');
-INSERT INTO JobBand VALUES (7,'Apprentice');
-INSERT INTO JobBand VALUES (8, 'Other');
+INSERT INTO JobBand (JobBand) VALUES ('Leadership');
+INSERT INTO JobBand (JobBand) VALUES ('Principle');
+INSERT INTO JobBand (JobBand) VALUES ('Manager');
+INSERT INTO JobBand (JobBand) VALUES ('Consultant');
+INSERT INTO JobBand (JobBand) VALUES ('Senior Associate');
+INSERT INTO JobBand (JobBand) VALUES ('Associate');
+INSERT INTO JobBand (JobBand) VALUES ('Trainee');
+INSERT INTO JobBand (JobBand) VALUES ('Apprentice');
+INSERT INTO JobBand (JobBand) VALUES ('Other');
 
-INSERT INTO JobCapability VALUES (0, 'Platforms');
-INSERT INTO JobCapability VALUES (1, 'Data');
-INSERT INTO JobCapability VALUES (2, 'Engineering');
-INSERT INTO JobCapability VALUES (3, 'Artificial Intelligence');
-INSERT INTO JobCapability VALUES (4, 'Cyber Security');
-INSERT INTO JobCapability VALUES (5, 'Workday');
-INSERT INTO JobCapability VALUES (6, 'Experience Design');
-INSERT INTO JobCapability VALUES (7, 'Product');
-INSERT INTO JobCapability VALUES (8, 'Delivery');
-INSERT INTO JobCapability VALUES (9, 'Operations');
-INSERT INTO JobCapability VALUES (10, 'Business Development and Marketing');
-INSERT INTO JobCapability VALUES (11, 'Organisational Strategy and Planning');
-INSERT INTO JobCapability VALUES (12, 'People');
-INSERT INTO JobCapability VALUES (13, 'Commercial and Financial Marketing');
-INSERT INTO JobCapability VALUES (14, 'Business Services Support');
+INSERT INTO JobCapability (JobCapability) VALUES ('Platforms');
+INSERT INTO JobCapability (JobCapability) VALUES ('Data');
+INSERT INTO JobCapability (JobCapability) VALUES ('Engineering');
+INSERT INTO JobCapability (JobCapability) VALUES ('Artificial Intelligence');
+INSERT INTO JobCapability (JobCapability) VALUES ('Cyber Security');
+INSERT INTO JobCapability (JobCapability) VALUES ('Workday');
+INSERT INTO JobCapability (JobCapability) VALUES ('Experience Design');
+INSERT INTO JobCapability (JobCapability) VALUES ('Product');
+INSERT INTO JobCapability (JobCapability) VALUES ('Delivery');
+INSERT INTO JobCapability (JobCapability) VALUES ('Operations');
+INSERT INTO JobCapability (JobCapability) VALUES ('Business Development and Marketing');
+INSERT INTO JobCapability (JobCapability) VALUES ('Organisational Strategy and Planning');
+INSERT INTO JobCapability (JobCapability) VALUES ('People');
+INSERT INTO JobCapability (JobCapability) VALUES ('Commercial and Financial Marketing');
+INSERT INTO JobCapability (JobCapability) VALUES ('Business Services Support');
 
-INSERT INTO JobDiscipline VALUES (0, 'Engineering, Strategy & Planning');
-INSERT INTO JobDiscipline VALUES (1, 'Engineering');
-INSERT INTO JobDiscipline VALUES (2, 'Architecture');
-INSERT INTO JobDiscipline VALUES (3, 'Testing & Quality Assurance');
-INSERT INTO JobDiscipline VALUES (4, 'Product Specialist');
-INSERT INTO JobDiscipline VALUES (5, 'Platform Strategy and Planning');
-INSERT INTO JobDiscipline VALUES (6, 'Platform Engineering');
-INSERT INTO JobDiscipline VALUES (7, 'Platform Architecture');
-INSERT INTO JobDiscipline VALUES (8, 'Platform Specialists');
-INSERT INTO JobDiscipline VALUES (9, 'Cloud Migration');
-INSERT INTO JobDiscipline VALUES (10, 'Systems Support');
-INSERT INTO JobDiscipline VALUES (11, 'Data Strategy and Planning');
-INSERT INTO JobDiscipline VALUES (12, 'Data Engineering');
-INSERT INTO JobDiscipline VALUES (13, 'Analysis & Data Architecture');
+INSERT INTO JobDiscipline (JobDiscipline) VALUES ('Engineering, Strategy & Planning');
+INSERT INTO JobDiscipline (JobDiscipline) VALUES ('Engineering');
+INSERT INTO JobDiscipline (JobDiscipline) VALUES ('Architecture');
+INSERT INTO JobDiscipline (JobDiscipline) VALUES ('Testing & Quality Assurance');
+INSERT INTO JobDiscipline (JobDiscipline) VALUES ('Product Specialist');
+INSERT INTO JobDiscipline (JobDiscipline) VALUES ('Platform Strategy and Planning');
+INSERT INTO JobDiscipline (JobDiscipline) VALUES ('Platform Engineering');
+INSERT INTO JobDiscipline (JobDiscipline) VALUES ('Platform Architecture');
+INSERT INTO JobDiscipline (JobDiscipline) VALUES ('Platform Specialists');
+INSERT INTO JobDiscipline (JobDiscipline) VALUES ('Cloud Migration');
+INSERT INTO JobDiscipline (JobDiscipline) VALUES ('Systems Support');
+INSERT INTO JobDiscipline (JobDiscipline) VALUES ('Data Strategy and Planning');
+INSERT INTO JobDiscipline (JobDiscipline) VALUES ('Data Engineering');
+INSERT INTO JobDiscipline (JobDiscipline) VALUES ('Analysis & Data Architecture');
 
 INSERT INTO JobRoles (JobTitle, JobSpecification, JobCapability, JobDiscipline, JobBand, JobCompetencies) 
 VALUES ('(CTO) Chief Technology Officer', 
@@ -549,3 +549,19 @@ Setting Direction, Development and Accountability - Prioritise and communicate e
 Supporting and Delivering the Strategy - Articulates individual contribution to the wider Kainos objectives, clearly defines how individual personal performance can have an impact on the business, respects differences and promotes inclusion.
 Commerciality and Risk - Comprehends the need for the business to generate additional income and respects that costs need to be managed, considers and suggests ideas for improvements.
 Communicating and Influence - Involved at meetings, asking questions, remaining communicative, demonstrates influencing skills, demonstrates how to participate in stakeholder management.' WHERE JobRoleID = 9;
+
+
+
+UPDATE JobBand SET JobBandTraining = 'https://tinyurl.com/4mhvycvp' WHERE JobBandID = 1;
+UPDATE JobBand SET JobBandTraining = 'https://tinyurl.com/4mhvycvp' WHERE JobBandID = 2;
+UPDATE JobBand SET JobBandTraining = 'https://tinyurl.com/4mhvycvp' WHERE JobBandID = 3;
+UPDATE JobBand SET JobBandTraining = 'https://tinyurl.com/4mhvycvp' WHERE JobBandID = 4;
+UPDATE JobBand SET JobBandTraining = 'https://tinyurl.com/4mhvycvp' WHERE JobBandID = 5;
+UPDATE JobBand SET JobBandTraining = 'https://tinyurl.com/4mhvycvp' WHERE JobBandID = 6;
+UPDATE JobBand SET JobBandTraining = 'https://tinyurl.com/4mhvycvp' WHERE JobBandID = 7;
+UPDATE JobBand SET JobBandTraining = 'https://tinyurl.com/4mhvycvp' WHERE JobBandID = 8;
+UPDATE JobBand SET JobBandTraining = 'https://tinyurl.com/4mhvycvp' WHERE JobBandID = 9;
+UPDATE JobBand SET JobBandTraining = 'https://tinyurl.com/4mhvycvp' WHERE JobBandID = 10;
+UPDATE JobBand SET JobBandTraining = 'https://tinyurl.com/4mhvycvp' WHERE JobBandID = 11;
+
+

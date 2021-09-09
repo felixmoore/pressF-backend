@@ -6,19 +6,18 @@ DROP TABLE IF EXISTS JobCapability;
 DROP TABLE IF EXISTS JobBand;
 
 CREATE TABLE JobBand (
-    JobBandID INT NOT NULL PRIMARY KEY,
+    JobBandID INT NOT NULL PRIMARY KEY auto_increment,
     JobBand VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE JobCapability (
-	JobCapabilityID INT NOT NULL PRIMARY KEY,
+    JobCapabilityID INT NOT NULL PRIMARY KEY auto_increment,
     JobCapability VARCHAR(100) NOT NULL
 );
 
-
 CREATE TABLE JobDiscipline (
- JobDisciplineID INT NOT NULL PRIMARY KEY,
- JobDiscipline VARCHAR(100) NOT NULL
+    JobDisciplineID INT NOT NULL PRIMARY KEY auto_increment,
+    JobDiscipline VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE JobRoles (
