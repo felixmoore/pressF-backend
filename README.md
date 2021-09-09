@@ -1,16 +1,32 @@
 # pressF-backend
 
-http://localhost:8080/api/getjobroles
+Team F - Press F To Pay Respects
 
-## Run configuration
+**Team Members:**
+* Eman Abbasi
+* Felix Moore
+* Matthew McPolin
+* Aleksandra Łobocka
+* John Walker
+
+## Overview
+
+A RESTful API to support our online job application that serves both Kainos employees and recruitment admin to retrieve and update job roles and their relevant information.
+
+## How to run
+
+1. Create a `config.yml` file in `src/main/resources/`, following the structure in the 'Configuration' section
+2. Generate a .jar file using `mvn package`
+3. In the terminal, run the command `java -jar target/pressF-backend-1.0-SNAPSHOT.jar server src/main/resources/config.yml`
+
+### Run configuration for IDEs
 
 Main class: com.kainos.ea.JobSystemApplication 
-
 Arguments: server src/main/resources/config.yml
 
-## config.yml
+## Configuration
 
-Located in src/main/resources/, format:
+`config.yml` - located in src/main/resources/, format:
 
 ```
 database:
@@ -38,8 +54,8 @@ swagger:
 - Right click any file or directory & click 'Reformat Code'
 
 
-## Running Swagger:
+## Accessing Swagger
 	
-Open a browser http://localhost:8080/swagger
+Open a browser to http://localhost:8080/swagger
 
 
