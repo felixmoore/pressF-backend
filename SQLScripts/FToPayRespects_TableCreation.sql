@@ -14,7 +14,8 @@ CREATE TABLE Users (
 
 CREATE TABLE JobBand (
     JobBandID INT NOT NULL PRIMARY KEY auto_increment,
-    JobBand VARCHAR(100) NOT NULL
+    JobBand VARCHAR(100) NOT NULL,
+    JobBandTraining varchar(2000)
 );
 
 CREATE TABLE JobCapability (
