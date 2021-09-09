@@ -6,6 +6,8 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.kainos.ea.db.JobRolesDAO;
+import com.kainos.ea.objects.JobBand;
+import com.kainos.ea.objects.JobCapability;
 import com.kainos.ea.objects.JobRole;
 import com.kainos.ea.resources.JobRolesResource;
 import io.dropwizard.testing.junit5.DropwizardExtensionsSupport;
@@ -24,6 +26,8 @@ class JobRolesResourceTest {
   private JobRolesResource resource;
   private JobRole jobRole;
   private ArrayList<JobRole> jobRoles;
+  private JobBand jobBand;
+  private JobCapability jobCapability;
 
   // Creates DAO and mock data for use in later tests
   @BeforeEach
@@ -40,6 +44,11 @@ class JobRolesResourceTest {
     jobRole.setJobCompetencies("Test competencies");
     jobRoles = new ArrayList<>();
     jobRoles.add(jobRole);
+    jobBand = new JobBand();
+    jobBand.setJobBand("Test JobBand");
+    jobBand.setJobBandTraining("Test Training for band");
+    jobCapability = new JobCapability();
+    jobCapability.setJobCapability("Test Capability");
   }
 
   // Checking happy path functionality of getJobRoles
@@ -93,6 +102,42 @@ class JobRolesResourceTest {
     assertEquals(false, result);
 
     verify(jobRolesDAO).addJobRole("Test", "Test Spec", 0, 0, 0, "Test competencies");
+  }
+
+  @Test
+  void addJobBandSuccess() {
+    when(jobRolesDAO.addJobBand("Test JobBand", "Test Training for band")).thenReturn(true);
+    boolean result = resource.addJobBand(jobBand);
+    assertEquals(true, result);
+
+    verify(jobRolesDAO).addJobBand("Test JobBand", "Test Training for band");
+  }
+
+  @Test
+  void addJobBandFailure() {
+    when(jobRolesDAO.addJobBand("Test JobBand", "Test Training for band")).thenReturn(false);
+    boolean result = resource.addJobBand(jobBand);
+    assertEquals(false, result);
+
+    verify(jobRolesDAO).addJobBand("Test JobBand", "Test Training for band");
+  }
+
+  @Test
+  void addJobCapabilitySuccess() {
+    when(jobRolesDAO.addJobCapability("Test Capability")).thenReturn(false);
+    boolean result = resource.addJobCapability(jobCapability);
+    assertEquals(false, result);
+
+    verify(jobRolesDAO).addJobCapability("Test Capability");
+  }
+
+  @Test
+  void addJobCababilityFailure() {
+    when(jobRolesDAO.addJobCapability("Test Capability")).thenReturn(false);
+    boolean result = resource.addJobCapability(jobCapability);
+    assertEquals(false, result);
+
+    verify(jobRolesDAO).addJobCapability("Test Capability");
   }
 
   @AfterEach
