@@ -15,7 +15,6 @@ CREATE TABLE JobCapability (
     JobCapability VARCHAR(100) NOT NULL
 );
 
-
 CREATE TABLE JobDiscipline (
  JobDisciplineID INT NOT NULL PRIMARY KEY auto_increment,
  JobDiscipline VARCHAR(100) NOT NULL
