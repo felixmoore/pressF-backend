@@ -52,10 +52,10 @@ public interface JobRolesDAO {
   @RegisterBeanMapper(JobDiscipline.class)
   List<JobDiscipline> getJobDiscipline();
 
-  @SqlUpdate("INSERT INTO JobBand (JobBand, JobBandTraining) VALUES (:jobBand, :jobBandTraining );")
+  @SqlUpdate("INSERT INTO JobBand (JobBand, JobBandTraining) VALUES (:jobBand, :jobBandTraining);")
   boolean addJobBand(@Bind("jobBand") String jobBand, @Bind("jobBandTraining") String jobBandTraining);
 
-  @SqlUpdate("INSERT INTO JobCapability (JobCapability) VALUES (:jobCapability );")
+  @SqlUpdate("INSERT INTO JobCapability (JobCapability) VALUES (:jobCapability);")
   boolean addJobCapability(@Bind("jobCapability") String jobCapability);
 
 }

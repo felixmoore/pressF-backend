@@ -11,13 +11,13 @@ CREATE TABLE JobBand (
 );
 
 CREATE TABLE JobCapability (
-	JobCapabilityID INT NOT NULL PRIMARY KEY auto_increment,
+    JobCapabilityID INT NOT NULL PRIMARY KEY auto_increment,
     JobCapability VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE JobDiscipline (
- JobDisciplineID INT NOT NULL PRIMARY KEY auto_increment,
- JobDiscipline VARCHAR(100) NOT NULL
+    JobDisciplineID INT NOT NULL PRIMARY KEY auto_increment,
+    JobDiscipline VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE JobRoles (
