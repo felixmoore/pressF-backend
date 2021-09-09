@@ -8,7 +8,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 /**
- * Defines API endpoints for the system.
+ * Defines API endpoints for the JobRoles section of the system.
  */
 @Api
 @Path("/api")

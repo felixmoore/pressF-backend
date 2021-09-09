@@ -550,7 +550,8 @@ Supporting and Delivering the Strategy - Articulates individual contribution to 
 Commerciality and Risk - Comprehends the need for the business to generate additional income and respects that costs need to be managed, considers and suggests ideas for improvements.
 Communicating and Influence - Involved at meetings, asking questions, remaining communicative, demonstrates influencing skills, demonstrates how to participate in stakeholder management.' WHERE JobRoleID = 9;
 
-
+INSERT INTO Users VALUES ('email@kainos.com', SHA2('password', 256), 0);
+INSERT INTO Users VALUES ('admin@kainos.com', SHA2('password', 256), 1);
 
 UPDATE JobBand SET JobBandTraining = 'https://tinyurl.com/4mhvycvp' WHERE JobBandID = 1;
 UPDATE JobBand SET JobBandTraining = 'https://tinyurl.com/4mhvycvp' WHERE JobBandID = 2;
@@ -563,5 +564,3 @@ UPDATE JobBand SET JobBandTraining = 'https://tinyurl.com/4mhvycvp' WHERE JobBan
 UPDATE JobBand SET JobBandTraining = 'https://tinyurl.com/4mhvycvp' WHERE JobBandID = 9;
 UPDATE JobBand SET JobBandTraining = 'https://tinyurl.com/4mhvycvp' WHERE JobBandID = 10;
 UPDATE JobBand SET JobBandTraining = 'https://tinyurl.com/4mhvycvp' WHERE JobBandID = 11;
-
-
