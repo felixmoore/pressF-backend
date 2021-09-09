@@ -1,14 +1,10 @@
 package com.kainos.ea.resources;
 
 import com.kainos.ea.db.JobRolesDAO;
-import com.kainos.ea.objects.JobRole;
+import com.kainos.ea.objects.*;
 import io.swagger.annotations.Api;
 import java.util.List;
-import javax.ws.rs.GET;
-import javax.ws.rs.NotFoundException;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -43,4 +39,37 @@ public class JobRolesResource {
   public List<JobRole> getJobRoles() {
     return jobRolesDAO.getJobRoles();
   }
+
+  @POST
+  @Path("/addjobrole")
+  @Consumes(MediaType.APPLICATION_JSON)
+  public boolean addJobRole(JobRole jobRole) {
+    return jobRolesDAO.addJobRole(jobRole.getJobTitle(), jobRole.getJobSpecification(), jobRole.getJobCapabilityId(), jobRole.getJobDisciplineId(), jobRole.getJobBandId(), jobRole.getJobCompetencies());
+  }
+
+  @POST
+  @Path("/addjobband")
+  @Consumes(MediaType.APPLICATION_JSON)
+  public boolean addJobBand(JobBand jobBand) {
+    return jobRolesDAO.addJobBand(jobBand.getJobBand(), jobBand.getJobBandTraining());
+  }
+
+  @POST
+  @Path("/addjobcapability")
+  @Consumes(MediaType.APPLICATION_JSON)
+  public boolean addJobCapability(JobCapability jobCapability) {
+    return jobRolesDAO.addJobCapability(jobCapability.getJobCapability());
+  }
+
+  @GET
+  @Path("/getjobband")
+  public List<JobBand> getJobBand() { return jobRolesDAO.getJobBand(); }
+
+  @GET
+  @Path("/getjobcapability")
+  public List<JobCapability> getJobCapability() { return jobRolesDAO.getJobCapability(); }
+
+  @GET
+  @Path("/getjobdiscipline")
+  public List<JobDiscipline> getJobDiscipline() { return jobRolesDAO.getJobDiscipline(); }
 }
