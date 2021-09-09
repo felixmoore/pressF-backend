@@ -131,13 +131,21 @@ public class JobRole {
     this.jobRoleResponsibilities = jobRoleResponsibilities;
   }
 
-  public int getJobBandId(){ return jobBandId; }
+  public int getJobBandId() {
+    return jobBandId;
+  }
 
-  public void setJobBandId(int jobBandId) { this.jobBandId = jobBandId; }
+  public void setJobBandId(int jobBandId) {
+    this.jobBandId = jobBandId;
+  }
 
-  public int getJobCapabilityId(){ return jobCapabilityId; }
+  public int getJobCapabilityId() {
+    return jobCapabilityId;
+  }
 
-  public void setJobCapabilityId(int jobCapabilityId) { this.jobCapabilityId = jobCapabilityId; }
+  public void setJobCapabilityId(int jobCapabilityId) {
+    this.jobCapabilityId = jobCapabilityId;
+  }
 
   public int getJobDisciplineId() {
     return jobDisciplineId;
@@ -147,12 +155,12 @@ public class JobRole {
     this.jobDisciplineId = jobDisciplineId;
   }
 
-  public void setJobBandTraining(String jobBandTraining) {
-    this.jobBandTraining = jobBandTraining;
-  }
-
   public String getJobBandTraining() {
     return jobBandTraining;
+  }
+
+  public void setJobBandTraining(String jobBandTraining) {
+    this.jobBandTraining = jobBandTraining;
   }
 
   @Override

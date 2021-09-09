@@ -25,12 +25,12 @@ public class JobBand {
     this.jobBand = jobBand;
   }
 
-  public void setJobBandId(int jobBandId) {
-    this.jobBandId = jobBandId;
-  }
-
   public int getJobBandId() {
     return jobBandId;
+  }
+
+  public void setJobBandId(int jobBandId) {
+    this.jobBandId = jobBandId;
   }
 
   public String getJobBandTraining() {
