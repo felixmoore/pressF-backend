@@ -1,6 +1,5 @@
 package com.kainos.ea;
 
-
 import com.kainos.ea.authentication.UserAuthenticator;
 import com.kainos.ea.authentication.UserAuthoriser;
 import com.kainos.ea.db.JobRolesDAO;

@@ -6,7 +6,6 @@ import java.util.List;
  * Kainos Job Capability property (e.g. Software Engineer)
  */
 public class JobRole {
-
   private int jobRoleID;
   private String jobTitle;
   private String jobSpecification;
