@@ -21,8 +21,8 @@ A RESTful API to support our online job application that serves both Kainos empl
 
 ### Run configuration for IDEs
 
-Main class: com.kainos.ea.JobSystemApplication 
-Arguments: server src/main/resources/config.yml
+* Main class: com.kainos.ea.JobSystemApplication 
+* Arguments: server src/main/resources/config.yml
 
 ## Configuration
 

@@ -2,6 +2,9 @@ package com.kainos.ea.objects;
 
 import java.security.Principal;
 
+/**
+ * Java representation of User database table.
+ */
 public class User implements Principal {
   private final String email;
   private final String role;
@@ -20,5 +23,7 @@ public class User implements Principal {
   }
 
   @Override
-  public String getName() { return getEmail(); }
+  public String getName() {
+    return getEmail();
+  }
 }

@@ -8,6 +8,9 @@ import io.dropwizard.auth.basic.BasicCredentials;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Used to authenticate login requests against stored user details.
+ */
 public class UserAuthenticator implements Authenticator<BasicCredentials, User> {
   UserDAO userDAO;
 
@@ -20,8 +23,8 @@ public class UserAuthenticator implements Authenticator<BasicCredentials, User> 
     // Pulls user info from the DAO, checks against the given credentials
     List<String> retrieved = userDAO.getUserDetails(credentials.getUsername(), credentials.getPassword());
     if (retrieved != null) {
-      if (retrieved.get(0).equals(credentials.getUsername()) &&
-          retrieved.get(1).equals(credentials.getPassword())) {
+      if (retrieved.get(0).equals(credentials.getUsername())
+          && retrieved.get(1).equals(credentials.getPassword())) {
         return Optional.of(new User(credentials.getUsername(), retrieved.get(2)));
       }
     }

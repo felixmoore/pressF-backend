@@ -1,5 +1,8 @@
 package com.kainos.ea.objects;
 
+/**
+ * Java representation of JobRoleResponsibilities database table.
+ */
 public class JobRoleResponsibilities {
   private String jobRoleResponsibility;
 

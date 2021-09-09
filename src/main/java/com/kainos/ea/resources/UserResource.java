@@ -22,13 +22,16 @@ public class UserResource {
     this.userDAO = userDAO;
   }
 
+  /**
+   * Attempts to authenticate user based on details sent in POST request.
+   *
+   * @param user - attempted login details from POST request header.
+   * @return user - either a valid user or an Optional.empty() - handled by Dropwizard as error 401.
+   */
   @POST
   @Path("/login")
   @Produces(MediaType.APPLICATION_JSON)
   public User getLoginResponse(@Auth User user) {
-    //authenticate user
-    //return access token
-    //return error if not authenticated
     return user;
   }
 }

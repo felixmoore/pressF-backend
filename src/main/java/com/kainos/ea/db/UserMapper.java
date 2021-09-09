@@ -8,7 +8,7 @@ import org.jdbi.v3.core.mapper.RowMapper;
 import org.jdbi.v3.core.statement.StatementContext;
 
 /**
- * Maps user details retrieved in UserDAO.getUserDetails() into a List<String>.
+ * Maps user details retrieved in UserDAO.getUserDetails() into a List.
  * This is done to prevent passwords being stored in User objects.
  */
 public class UserMapper implements RowMapper<List<String>> {
