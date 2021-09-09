@@ -4,21 +4,28 @@ DROP TABLE IF EXISTS JobRoles;
 DROP TABLE IF EXISTS JobDiscipline;
 DROP TABLE IF EXISTS JobCapability;
 DROP TABLE IF EXISTS JobBand;
+DROP TABLE IF EXISTS Users;
+
+CREATE TABLE Users (
+	UserEmail VARCHAR(300) NOT NULL PRIMARY KEY,
+	UserPassword VARCHAR(256) NOT NULL,
+    UserRole BOOL NOT NULL
+);
 
 CREATE TABLE JobBand (
-    JobBandID INT NOT NULL PRIMARY KEY,
-    JobBand VARCHAR(100) NOT NULL
+    JobBandID INT NOT NULL PRIMARY KEY auto_increment,
+    JobBand VARCHAR(100) NOT NULL,
+    JobBandTraining varchar(2000)
 );
 
 CREATE TABLE JobCapability (
-	JobCapabilityID INT NOT NULL PRIMARY KEY,
+    JobCapabilityID INT NOT NULL PRIMARY KEY auto_increment,
     JobCapability VARCHAR(100) NOT NULL
 );
 
-
 CREATE TABLE JobDiscipline (
- JobDisciplineID INT NOT NULL PRIMARY KEY,
- JobDiscipline VARCHAR(100) NOT NULL
+    JobDisciplineID INT NOT NULL PRIMARY KEY auto_increment,
+    JobDiscipline VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE JobRoles (

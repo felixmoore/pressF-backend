@@ -14,13 +14,12 @@ public class JobSystemConfiguration extends Configuration {
   @Valid
   @NotNull
   private DataSourceFactory dataSourceFactory = new DataSourceFactory();
+  private SwaggerBundleConfiguration swagger;
 
   @JsonProperty("database")
   public DataSourceFactory getDataSourceFactory() {
     return dataSourceFactory;
   }
-
-  private SwaggerBundleConfiguration swagger;
 
   public SwaggerBundleConfiguration getSwagger() {
     return swagger;

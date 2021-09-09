@@ -6,14 +6,22 @@ package com.kainos.ea.objects;
 public class JobBand {
 
   private int jobBandId;
-  private JobBand jobBand;
+  private String jobBand;
+  private String jobBandTraining;
 
   public JobBand() {
   }
 
-  public JobBand(int jobBandId, JobBand jobBand) {
+  public JobBand(String jobBand) {
     super();
-    this.jobBandId = jobBandId;
+    this.jobBand = jobBand;
+  }
+
+  public String getJobBand() {
+    return jobBand;
+  }
+
+  public void setJobBand(String jobBand) {
     this.jobBand = jobBand;
   }
 
@@ -25,11 +33,12 @@ public class JobBand {
     this.jobBandId = jobBandId;
   }
 
-  public JobBand getJobBand() {
-    return jobBand;
+  public String getJobBandTraining() {
+    return jobBandTraining;
   }
 
-  public void setJobBand(JobBand jobBand) {
-    this.jobBand = jobBand;
+  public void setJobBandTraining(String jobBandTraining) {
+    this.jobBandTraining = jobBandTraining;
   }
+
 }
