@@ -19,6 +19,8 @@ A RESTful API to support our online job application that serves both Kainos empl
 2. Generate a .jar file using `mvn package`
 3. In the terminal, run the command `java -jar target/pressF-backend-1.0-SNAPSHOT.jar server src/main/resources/config.yml`
 
+*Note: this application is the backend only. The frontend can be found here: https://github.com/Emanity/pressF-frontend*
+
 ### Run configuration for IDEs
 
 * Main class: com.kainos.ea.JobSystemApplication 
